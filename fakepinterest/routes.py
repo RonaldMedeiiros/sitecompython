@@ -1,4 +1,5 @@
-from flask import Flask, render_template, url_for
+from flask import render_template, url_for
+from fakepinterest import app
 
 
 @app.route("/") #cada rota leva para uma página.
