@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
 
@@ -6,9 +6,9 @@ app = Flask(__name__)
 def homepage():
     return render_template("homepage.html")
 
-@app.route("/perfil")
-def perfil():
-    return "Perfil do Usuário"
+@app.route("/perfil/<usuario>")
+def perfil(usuario):
+    return render_template("perfil.html", usuario=usuario)
 
 if __name__ == "__main__": #para executar esse arquivo só quando ele for chamado e não importado, se importar não vai rodar esse if
     app.run(debug=True)
