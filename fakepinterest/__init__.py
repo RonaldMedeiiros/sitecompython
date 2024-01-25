@@ -6,6 +6,7 @@ from flask_bcrypt import Bcrypt
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///comunidade.db"
 app.config["SECRET_KEY"] = "5b0426232c3e36bf0c6efe6b1cc82256" #usar o gerarsenha.py
+app.config["UPLOAD_FOLDER"] = "static/fotos_posts" #local onde serão salvas as fotos.
 
 database = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
