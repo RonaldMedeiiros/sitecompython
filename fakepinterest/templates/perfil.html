@@ -1,28 +1,40 @@
 {% extends "homepage.html" %}
 
 {% block titulo %}
-Perfil - {{ usuario}}
+Perfil - {{ usuario.username }}
 {% endblock%}
 
 {% block body%}
 <body>
     {% include "navbar.html" %}
-    <h2>Perfil do usuário: {{ usuario.username }}</h2>
-
-    {% if form %}
-        <form method="POST" enctype="multipart/form-data">
-            {{ form.csrf_token }}
-            {{ form.foto() }}
-            {{ form.botao_confirmacao() }}
-        </form>
-    {% endif %}
-
-    {% for foto in usuario.fotos %}
-    <img src="{{ url_for('static', filename='/fotos_posts/{}'.format(foto.imagem)) }}">
-    {% endfor %}
-
-    
+    <div class="container">
+        <div class="bloco-add-img">
+            {% if form %}
+                <form method="POST" enctype="multipart/form-data">
+                    {{ form.csrf_token }}
+                    {{ form.foto() }}
+                    {{ form.botao_confirmacao() }}
+                </form>
+            {% endif %}
+        </div>
+        <div class="bloco-add-img">
+            <h2>Perfil - {{usuario.username}}</h2>
+        </div>
+        <div class="conteudo">
+            {% for foto in usuario.fotos %}
+            
+                <div class="bloco-imagem">
+                <img src="{{ url_for('static', filename='/fotos_posts/{}'.format(foto.imagem)) }}" alt="Pinterest 1" />
+                </div>
+            
+            {% endfor %}
+        </div>
+    </div>
 
     
 </body>
 {% endblock%}
+
+
+
+

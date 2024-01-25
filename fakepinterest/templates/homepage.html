@@ -1,30 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        {% block titulo %}
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <title>{% block titulo %}
         FakePinterest
-        {% endblock %}
-    </title>
-    
-</head>
-{% block body %}
-<body>
-    <h1>Fake Pinterest - Meu primeiro site</h1>
-{% block formulario %}
-<form action="" method="POST">
-    {{ form.csrf_token }}
-        
-        {{ form.email.label() }} {{ form.email() }}   
-        {{ form.senha.label() }} {{ form.senha() }}
-        {{ form.botao_confirmacao() }}
-        
+        {% endblock %}</title>
+  </head>
+  {% block body %}
+  <body>
+    <div class="container">
+      <header>
+        {% include "navbar.html" %}
+      </header>
 
-</form>
-<a href="{{url_for('criarconta')}}">Não Possui conta? Cadastre-se</a>
-{% endblock %}
-</body>
-{% endblock %}
+      {% include "login.html" %}
+
+      
+    </div>
+  </body>
+  {% endblock %}
 </html>
