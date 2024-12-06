@@ -1,4 +1,5 @@
 from fakepinterest import app
 
-if __name__ == "__main__": #para executar esse arquivo só quando ele for chamado e não importado, se importar não vai rodar esse if
-    app.run(debug=True)
+if __name__ == "__main__":
+    # Escuta em todas as interfaces (0.0.0.0) e na porta 5000
+    app.run(host='0.0.0.0', port=5000, debug=True)
