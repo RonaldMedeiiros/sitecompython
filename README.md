@@ -1,6 +1,6 @@
 # Fake Pinterest
 
-Aplicação feita em Python, usando Flask como Framework e sqlite como banco de dados, rodando em um docker na porta 5020, via link http://portifolio.mosetech.com.br:5020. 
+Aplicação feita em Python, usando Flask como Framework e sqlite como banco de dados, rodando em um docker na porta 5020, via link http://portfolio.mosetech.com.br:5020. 
 
 Entre, crie o usuário e envie imagens em seu perfil. 
 
