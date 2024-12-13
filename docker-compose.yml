@@ -4,8 +4,6 @@ services:
   app:
     build: .
     ports:
-      - "5100:5100"
-    volumes:
-      - .:/var/www/html
+      - "5010:5010" # Mapeia a porta 5010 do container para a porta 5010 da VPS
     environment:
-      - DB_PATH=/var/www/html/banco.sqlite
+      - PYTHONUNBUFFERED=1
