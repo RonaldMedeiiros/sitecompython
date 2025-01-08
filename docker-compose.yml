@@ -15,6 +15,7 @@ services:
       - "traefik.http.routers.fakepinterest.tls.certresolver=myresolver"
     networks:
       - traefik_network
+    restart: always
 
 networks:
   traefik_network:
