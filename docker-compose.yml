@@ -3,7 +3,19 @@ version: '3.8'
 services:
   app:
     build: .
+    container_name: fakepinterest_app
     ports:
-      - "5010:5010" # Mapeia a porta 5010 do container para a porta 5010 da VPS
+      - "5100:5100" # Mapeia a porta 5100 do container para a porta 5100 da VPS (para acesso direto, se necessário)
     environment:
       - PYTHONUNBUFFERED=1
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.fakepinterest.rule=Host(`fakepinterest.mosetech.com.br`)"
+      - "traefik.http.routers.fakepinterest.entrypoints=websecure"
+      - "traefik.http.routers.fakepinterest.tls.certresolver=myresolver"
+    networks:
+      - traefik_network
+
+networks:
+  traefik_network:
+    external: true

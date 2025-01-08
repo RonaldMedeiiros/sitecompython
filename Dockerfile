@@ -16,8 +16,8 @@ COPY . .
 # Define a variável de ambiente para garantir que a saída seja exibida em tempo real
 ENV PYTHONUNBUFFERED=1
 
-# Expõe a porta 5010
-EXPOSE 5010
+# Expõe a porta 5100
+EXPOSE 5100
 
 # Comando para iniciar a aplicação
 CMD ["python", "main.py"]
